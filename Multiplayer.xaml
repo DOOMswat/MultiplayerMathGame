@@ -1,0 +1,49 @@
+﻿<Window x:Class="MathGame.Multiplayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MathGame"
+        mc:Ignorable="d"
+        Title="Multiplayer" Height="550" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="523*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="368*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="lblLives" Content="Lives: 3" Foreground="#FF20B50B" FontFamily="Roboto" VerticalAlignment="Center" Grid.Column="0" FontSize="48" FontWeight="Bold" Height="64" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,45,0,0" Height="219" Width="318">
+            <Label x:Name="lblQuestion" Content="Click Generate" Foreground="#FF1F1414" FontFamily="Roboto" FontSize="45" FontWeight="Bold" Padding="0 0 0 10"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="btnAnswer1" Content="Answer" Width="63" Click="btnAnswer1_Click" BorderBrush="Black"/>
+                <Rectangle Height="64" Width="22"/>
+                <Button Name="btnAnswer2" Content="Answer" Width="63" Click="btnAnswer2_Click" BorderBrush="Black"/>
+                <Rectangle Height="64" Width="22"/>
+                <Button Name="btnAnswer3"  Content="Answer" Width="63" Click="btnAnswer3_Click" BorderBrush="Black"/>
+                <Rectangle Height="64" Width="22"/>
+                <Button x:Name="btnAnswer4" Content="Answer" Width="63" Click="btnAnswer4_Click" BorderBrush="Black"/>
+            </StackPanel>
+            <Label x:Name="lblMessage" Content="win/loss" Foreground="#FF1F1414" FontFamily="Roboto" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Padding="0 15 0 0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Margin="0,252,0,25" Width="380">
+            <Button x:Name="btnRestart" Content="Restart Game" Width="120" Height="50" Click="btnRestart_Click"></Button>
+            <Button x:Name="btnGenerate" Content="Start game" Width="120" Height="50" Click="btnGenerate_Click" Margin="10 0 0 0"></Button>
+            <Button x:Name="btnCheck" Content="Check Answer" Width="120" Height="50" Margin="10 0 0 0" Click="btnCheck_Click"></Button>
+        </StackPanel>
+        <Label x:Name="lblTimer" Content="Timer: 0:00" Foreground="#FF1C1F1C" FontFamily="Roboto" VerticalAlignment="Bottom" Grid.Column="1" FontSize="48" FontWeight="Bold" Height="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="305"/>
+        <Label Content="Leaderboard" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="24" FontWeight="Bold" Grid.Row="1" Height="42" VerticalAlignment="Top"/>
+        <Button Name="btnLogout" Grid.Column="1" Content="Log Out" Margin="0,0,10,0" VerticalAlignment="Center" Click="btnLogout_Click" HorizontalAlignment="Right" Width="78"/>
+        <Label Name="lblPoint" Content="Points: 0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="71" Width="440" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" FontWeight="Bold" Grid.Column="1"/>
+        <ListBox Name="listBoxLeaderBoard" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,57,10,0" Height="286" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
